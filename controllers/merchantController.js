@@ -1,5 +1,6 @@
 const merchantService = require('../services/merchantService');
 const jsonResponse = require("../utils/jsonResponse");
+const merchantRepository = require("../repositories/merchantRepository");
 
 const store = async (req, res) => {
   const {name, address, user} = req.body;
@@ -10,4 +11,13 @@ const store = async (req, res) => {
   res.status(201).json(jsonResponse(201, createMerchant));
 }
 
-module.exports = {store}
+const show = async (req, res) => {
+  const {merchantId} = req.params;
+  const merchant = await merchantRepository.findById(merchantId);
+  if (!merchant) {
+    res.status(404).json(jsonResponse(404, null, "Merchant not found"));
+  }
+  res.status(200).json(jsonResponse(200, merchant));
+}
+
+module.exports = {store, show}
