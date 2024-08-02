@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="draftsState">
+      <draftsState>
+        <option name="auth">
+          <authState>
+            <option name="bearer">
+              <lt>
+                <option name="token" value="a|7F-Oe7U6ynl+14S2Kt25q40G8y84Xde--+BJc7fJYBVA_rs5Hiqpc36zoXcyZy8j0VQP0|__a4Qnul22qjzjeUaDbO-YuZitoZNH_ov5FtqYAjOCBk-Ljmy46GwI2uwyoBM3=RLgkcSqaJ2_qfz7" />
+              </lt>
+            </option>
+            <option name="type" value="BEARER" />
+          </authState>
+        </option>
+        <option name="headers">
+          <list>
+            <headerState>
+              <option name="key" value="Content-Type" />
+              <option name="value" value="application/json" />
+            </headerState>
+            <headerState>
+              <option name="key" value="Accept" />
+              <option name="value" value="application/json" />
+            </headerState>
+          </list>
+        </option>
+      </draftsState>
+    </option>
+    <option name="folders">
+      <list>
+        <folderState>
+          <option name="environmentGroups">
+            <list>
+              <environmentGroupState>
+                <option name="environments">
+                  <list>
+                    <environmentState>
+                      <option name="name" value="Development" />
+                    </environmentState>
+                  </list>
+                </option>
+                <option name="name" value="Default" />
+              </environmentGroupState>
+            </list>
+          </option>
+          <option name="folders">
+            <list>
+              <folderState>
+                <option name="auth">
+                  <authState>
+                    <option name="bearer">
+                      <lt>
+                        <option name="token" value="a|7F-Oe7U6ynl+14S2Kt25q40G8y84Xde--+BJc7fJYBVA_rs5Hiqpc36zoXcyZy8j0VQP0|__a4Qnul22qjzjeUaDbO-YuZitoZNH_ov5FtqYAjOCBk-Ljmy46GwI2uwyoBM3=RLgkcSqaJ2_qfz7" />
+                      </lt>
+                    </option>
+                    <option name="type" value="BEARER" />
+                  </authState>
+                </option>
+                <option name="id" value="64e656e5-c842-4f78-8dda-4df456cab7dc" />
+                <option name="name" value="User" />
+                <option name="requests">
+                  <list>
+                    <requestState>
+                      <option name="id" value="1acdf1b0-1b96-44fc-929c-96e6ab4aade0" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="Get All Users" />
+                      <option name="pathVariables">
+                        <list>
+                          <pathVariableState>
+                            <option name="key" value="basUrl" />
+                            <option name="value" value="http://localhost:3000/api/v1" />
+                          </pathVariableState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="1000000" />
+                      <option name="url" value="{basUrl}/users" />
+                    </requestState>
+                    <requestState>
+                      <option name="id" value="7ae53821-0696-4997-819e-3cc541ee7013" />
+                      <option name="method" value="GET" />
+                      <option name="name" value="Get By Username" />
+                      <option name="pathVariables">
+                        <list>
+                          <pathVariableState>
+                            <option name="key" value="baseUrl" />
+                            <option name="value" value="http://localhost:3000/api/v1" />
+                          </pathVariableState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="2000000" />
+                      <option name="url" value="{baseUrl}/users/muhali16" />
+                    </requestState>
+                  </list>
+                </option>
+                <option name="sortWeight" value="1000000" />
+              </folderState>
+              <folderState>
+                <option name="auth">
+                  <authState>
+                    <option name="bearer">
+                      <lt>
+                        <option name="token" value="a|7F-Oe7U6ynl+14S2Kt25q40G8y84Xde--+BJc7fJYBVA_rs5Hiqpc36zoXcyZy8j0VQP0|__a4Qnul22qjzjeUaDbO-YuZitoZNH_ov5FtqYAjOCBk-Ljmy46GwI2uwyoBM3=RLgkcSqaJ2_qfz7" />
+                      </lt>
+                    </option>
+                    <option name="type" value="BEARER" />
+                  </authState>
+                </option>
+                <option name="id" value="913a5e95-edb6-402e-9044-ee2dff894f0f" />
+                <option name="name" value="auth" />
+                <option name="requests">
+                  <list>
+                    <requestState>
+                      <option name="auth">
+                        <authState>
+                          <option name="type" value="NO_AUTH" />
+                        </authState>
+                      </option>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;muhali16&quot;,&#10;  &quot;password&quot;: &quot;akimusta&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Content-Type" />
+                            <option name="value" value="application/json" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="8103d8a3-29c5-49c1-84d3-70e1b3cd2267" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="Register" />
+                      <option name="pathVariables">
+                        <list>
+                          <pathVariableState>
+                            <option name="key" value="baseUrl" />
+                            <option name="value" value="http://localhost:3000/api/v1" />
+                          </pathVariableState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="500000" />
+                      <option name="url" value="{baseUrl}/users/muhali16" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  &quot;username&quot;: &quot;muhali22&quot;,&#10;  &quot;password&quot;: &quot;akimusta&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Content-Type" />
+                            <option name="value" value="application/json" />
+                          </headerState>
+                          <headerState>
+                            <option name="key" value="Accept" />
+                            <option name="value" value="application/json" />
+                          </headerState>
+                          <headerState>
+                            <option name="disabled" value="true" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="902fd59f-d5bc-43ef-8fad-4fd50d521899" />
+                      <option name="method" value="POST" />
+                      <option name="name" value="User Auth" />
+                      <option name="pathVariables">
+                        <list>
+                          <pathVariableState>
+                            <option name="key" value="baseUrl" />
+                            <option name="value" value="http://localhost:3000/api/v1" />
+                          </pathVariableState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="1500000" />
+                      <option name="url" value="{baseUrl}/auth/signing" />
+                    </requestState>
+                    <requestState>
+                      <option name="body">
+                        <bodyState>
+                          <option name="raw" value="{&#10;  username: &quot;muhali16&quot;&#10;}" />
+                          <option name="type" value="JSON" />
+                        </bodyState>
+                      </option>
+                      <option name="headers">
+                        <list>
+                          <headerState>
+                            <option name="key" value="Content-Type" />
+                            <option name="value" value="application/json" />
+                          </headerState>
+                          <headerState>
+                            <option name="key" value="Accept" />
+                            <option name="value" value="application/json" />
+                          </headerState>
+                          <headerState>
+                            <option name="disabled" value="true" />
+                          </headerState>
+                        </list>
+                      </option>
+                      <option name="id" value="720cc94f-4bc5-41c2-b16e-5a229b9e144a" />
+                      <option name="method" value="DELETE" />
+                      <option name="name" value="Signout" />
+                      <option name="pathVariables">
+                        <list>
+                          <pathVariableState>
+                            <option name="key" value="baseUrl" />
+                            <option name="value" value="http://localhost:3000/api/v1" />
+                          </pathVariableState>
+                        </list>
+                      </option>
+                      <option name="sortWeight" value="2500000" />
+                      <option name="url" value="{baseUrl}/auth/signout" />
+                    </requestState>
+                  </list>
+                </option>
+                <option name="sortWeight" value="2000000" />
+              </folderState>
+            </list>
+          </option>
+          <option name="id" value="1dfb2ec5-166f-4614-83ec-a3b540ce84e5" />
+          <option name="name" value="Example Express JS RestfullAPI" />
+          <option name="selectedEnvironmentIds">
+            <map>
+              <entry key="default" value="development" />
+            </map>
+          </option>
+          <option name="syncProperties">
+            <synchronizationPropertiesState>
+              <option name="folderPath" value="D:\Belajar Pemrograman\JavaScript\example-expressjs-restfullapi-jwt\.jetclient" />
+            </synchronizationPropertiesState>
+          </option>
+          <option name="variables">
+            <variablesState>
+              <option name="json" value="{&#10;  development: {&#10;    baseUrl: 'http://localhost:3000/api/v1',&#10;    token: 'a|7F-Oe7U6ynl+14S2Kt25q40G8y84Xde--+BJc7fJYBVA_rs5Hiqpc36zoXcyZy8j0VQP0|__a4Qnul22qjzjeUaDbO-YuZitoZNH_ov5FtqYAjOCBk-Ljmy46GwI2uwyoBM3=RLgkcSqaJ2_qfz7'&#10;  }&#10;}" />
+            </variablesState>
+          </option>
+        </folderState>
+      </list>
+    </option>
+    <option name="id" value="9be94b25-66ae-496a-b4e4-f0e8e6fa64ff" />
+    <option name="version" value="3" />
+  </component>
+</project>
