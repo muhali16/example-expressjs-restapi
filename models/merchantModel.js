@@ -14,7 +14,6 @@ const merchantSchema = new mongoose.Schema({
     unique: [true, 'Merchant name is unique'],
     minLength: [6, 'Merchant name must be at least 6 characters'],
     maxLength: [255, 'Merchant name must be less than 255 characters'],
-    match: [/^[a-zA-Z0-9]+$/, 'Merchant name must not contain any symbol'],
   },
   address: {
     type: String,
