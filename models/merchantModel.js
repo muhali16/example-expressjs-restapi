@@ -6,7 +6,6 @@ const randomStringGenerator = require('../utils/randomStringGenerator');
 const merchantSchema = new mongoose.Schema({
   uid: {
     type: String,
-    default: randomStringGenerator(75),
   },
   name: {
     type: String,
@@ -40,6 +39,15 @@ const merchantSchema = new mongoose.Schema({
     ref: 'User',
   }
 });
+
+// creating merchant uid
+merchantSchema.pre("save", async function(next) {
+  // if uid not modified
+  if (!this.isModified('uid')) {
+    return next();
+  }
+  this.uid = randomStringGenerator(75);
+})
 
 const Merchant = mongoose.model('Merchant', merchantSchema);
 module.exports = Merchant;

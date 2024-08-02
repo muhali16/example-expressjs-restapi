@@ -1,7 +1,7 @@
 const Mercant = require('../models/merchantModel');
 
 const findByUserId = async (user) => {
-  const merchant = await Mercant.findOne({user: user._id});
+  const merchant = await Mercant.findOne({user: user});
   if (!merchant) {
     return false;
   }
