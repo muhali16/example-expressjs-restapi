@@ -7,5 +7,6 @@ const router = express.Router();
 router.use(authMiddleware);
 
 router.post('/', merchantController.store); // create new merchant with user id query param
+router.get('/:merchantId', merchantController.show);
 
 module.exports = router;
