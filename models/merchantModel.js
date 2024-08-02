@@ -6,6 +6,8 @@ const randomStringGenerator = require('../utils/randomStringGenerator');
 const merchantSchema = new mongoose.Schema({
   uid: {
     type: String,
+    maxLength: 255,
+    required: [true, "UID is required."]
   },
   name: {
     type: String,
@@ -41,14 +43,19 @@ const merchantSchema = new mongoose.Schema({
   }
 });
 
-// creating merchant uid
-merchantSchema.pre("save", async function(next) {
-  // if uid not modified
-  if (!this.isModified('uid')) {
-    return next();
+// creating merchant uid before validation
+merchantSchema.pre("validate", async function (next) {
+  if (!this.uid) {
+    try {
+      this.uid = await randomStringGenerator(75);
+      next();
+    } catch (err) {
+      next(err);
+    }
+  } else {
+    next();
   }
-  this.uid = randomStringGenerator(75);
-})
+});
 
 const Merchant = mongoose.model('Merchant', merchantSchema);
 module.exports = Merchant;
