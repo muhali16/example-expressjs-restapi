@@ -7,14 +7,6 @@ const merchantSchema = new mongoose.Schema({
   uid: {
     type: String,
     maxLength: 255,
-    // default: function() {
-    //   randomStringGenerator(30).then((res) => {
-    //     console.log(res);
-    //     return res;
-    //   }).catch((err) => {
-    //     console.error(err);
-    //   });
-    // },
     required: [true, "UID is required."]
   },
   name: {
@@ -50,23 +42,6 @@ const merchantSchema = new mongoose.Schema({
     required: [true, 'Merchant must have user id.']
   }
 });
-
-// creating merchant uid
-// merchantSchema.pre("save", async function(next) {
-//   // if uid not modified
-//   if (!this.isModified('uid')) {
-//     return next();
-//   }
-//   try {
-//     const uid = await randomStringGenerator(75);
-//     console.log(uid);
-//     this.uid = uid;
-//     next();
-//   } catch (err) {
-//     console.error(err);
-//     next(err);
-//   }
-// })
 
 // creating merchant uid before validation
 merchantSchema.pre("validate", async function (next) {
