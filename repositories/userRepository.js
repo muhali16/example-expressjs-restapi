@@ -28,8 +28,7 @@ const findById = async (id) => {
 }
 
 const updateUserById = async (userId, data) => {
-  const user = await findById(userId);
-  const {username = user.username, balance = user.balance} = data;
+  const {username, balance} = data;
   const updateUser = await User.findOneAndUpdate(
       {_id: userId},
       {$set: {username: username, balance: balance}},
