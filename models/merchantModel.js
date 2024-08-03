@@ -24,6 +24,10 @@ const merchantSchema = new mongoose.Schema({
     type: Long,
     default: 0,
   },
+  isActive: {
+    type: Boolean,
+    default: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now(),
