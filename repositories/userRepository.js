@@ -27,4 +27,15 @@ const findById = async (id) => {
   return userData;
 }
 
-module.exports = {all, create, findByUsername, findById};
+const updateUserById = async (userId, data) => {
+  const user = await findById(userId);
+  const {username = user.username, balance = user.balance} = data;
+  const updateUser = await User.findOneAndUpdate(
+      {_id: userId},
+      {$set: {username: username, balance: balance}},
+      {new: true, select: 'username balance'}
+  );
+  return updateUser;
+}
+
+module.exports = {all, create, findByUsername, findById, updateUserById};
