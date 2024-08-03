@@ -29,4 +29,12 @@ const update = async (req, res) => {
   res.status(200).json(jsonResponse(200, merchantUpdate));
 }
 
-module.exports = {store, show, update}
+const deactivateMerchant = async (req, res) => {
+  const deactivate = await merchantService.deactivateMerchant(req.params.merchantId);
+  if (!deactivate) {
+    res.status(404).json(jsonResponse(404, null, "Merchant not found"));
+  }
+  res.status(200).json(jsonResponse(200, deactivate));
+}
+
+module.exports = {store, show, update, deactivateMerchant}

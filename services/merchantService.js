@@ -10,4 +10,12 @@ const createMerchant = async (merchant) => {
   return await merchantRepository.create({name, address, user});
 }
 
-module.exports = {createMerchant}
+const deactivateMerchant = async (merchantId) => {
+  const merchant = await merchantRepository.updateMerchant(merchantId, {isActive: false});
+  if (!merchant) {
+    return false;
+  }
+  return merchant;
+}
+
+module.exports = {createMerchant, deactivateMerchant};
