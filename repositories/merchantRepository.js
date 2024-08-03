@@ -1,4 +1,5 @@
 const Merchant = require('../models/merchantModel');
+const User = require('../models/userModel');
 
 const findByUserId = async (user) => {
   const merchant = await Merchant.findOne({user: user});
@@ -18,6 +19,10 @@ const findById = async (merchantId) => {
 
 const create = async (data) => {
   const {name, address, user} = data;
+  const checkUser = await User.findOne({_id: user});
+  if (!checkUser) {
+    return false;
+  }
   const merchant = new Merchant({name, address, user});
   await merchant.save();
   return merchant
