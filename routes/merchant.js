@@ -8,5 +8,6 @@ router.use(authMiddleware);
 
 router.post('/', merchantController.store); // create new merchant with user id query param
 router.get('/:merchantId', merchantController.show);
+router.post('/:merchantId/update', merchantController.update); // update merchant by merchant id
 
 module.exports = router;

@@ -23,4 +23,13 @@ const create = async (data) => {
   return merchant
 }
 
-module.exports = {create, findByUserId, findById}
+const updateMerchant = async (merchantId, data) => {
+  const update = await Merchant.findOneAndUpdate(
+      {_id: merchantId},
+      {$set: data},
+      {new: true, select: "uid name address balance"}
+  );
+  return update;
+}
+
+module.exports = {create, findByUserId, findById, updateMerchant}

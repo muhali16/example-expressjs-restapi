@@ -20,4 +20,13 @@ const show = async (req, res) => {
   res.status(200).json(jsonResponse(200, merchant));
 }
 
-module.exports = {store, show}
+const update = async (req, res) => {
+  const {merchantId} = req.params;
+  const merchantUpdate = await merchantRepository.updateMerchant(merchantId, req.body);
+  if (!merchantUpdate) {
+    res.status(404).json(jsonResponse(404, null, "Merchant not found"));
+  }
+  res.status(200).json(jsonResponse(200, merchantUpdate));
+}
+
+module.exports = {store, show, update}
