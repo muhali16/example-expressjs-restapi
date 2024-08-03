@@ -6,7 +6,7 @@ const store = async (req, res) => {
   const {name, address, user} = req.body;
   const createMerchant = await merchantService.createMerchant({name, address, user});
   if (!createMerchant) {
-    res.status(409).json(jsonResponse(409, null, "This user already has merchant"));
+    res.status(409).json(jsonResponse(409, null, "This user already has merchant or user not found"));
   }
   res.status(201).json(jsonResponse(201, createMerchant));
 }

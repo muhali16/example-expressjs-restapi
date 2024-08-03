@@ -7,7 +7,11 @@ const createMerchant = async (merchant) => {
   if (merchantData) {
     return false;
   }
-  return await merchantRepository.create({name, address, user});
+  const createMerchant = await merchantRepository.create({name, address, user});
+  if (!createMerchant) {
+    return false;
+  }
+  return createMerchant;
 }
 
 const deactivateMerchant = async (merchantId) => {
