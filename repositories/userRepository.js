@@ -1,4 +1,5 @@
 const User = require('../models/userModel');
+const Merchant = require('../models/merchantModel');
 
 const all = () => {
   return User.find();
@@ -37,4 +38,10 @@ const updateUserById = async (userId, data) => {
   return updateUser;
 }
 
-module.exports = {all, create, findByUsername, findById, updateUserById};
+const deleteUserById = async (userId) => {
+  const userDelete = await User.deleteOne({_id: userId});
+  const merchantDelete = await Merchant.deleteOne({user: userId});
+  return userDelete;
+}
+
+module.exports = {all, create, findByUsername, findById, updateUserById, deleteUserById};

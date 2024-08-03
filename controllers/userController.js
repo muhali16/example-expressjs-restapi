@@ -24,4 +24,12 @@ const changeUsername = async (req, res) => {
   res.status(200).json(jsonResponse(200, changeUsername));
 };
 
-module.exports = { index, show, changeUsername };
+const deleteAccount = async (req, res) => {
+  const deleteUser = await userRepository.deleteUserById(req.params.userId);
+  if (!deleteUser) {
+    res.status(404).json(jsonResponse(404, null, "User not found."));
+  }
+  res.status(204).json(jsonResponse(204, null));
+}
+
+module.exports = { index, show, changeUsername, deleteAccount };
