@@ -29,7 +29,7 @@ const tokenCheck = async (token) => {
 }
 
 const forgetToken = async (username) => {
-  const user = await userRepository.findByUsername(username);
+  const user = await userRepository.findByUsernameOrId(username);
   return await userTokenRepository.deleteUserTokenByUserId(user._id);
 }
 
