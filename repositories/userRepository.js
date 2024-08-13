@@ -20,6 +20,14 @@ const findByUsername = async (username) => {
   return userData;
 }
 
+const findUserPasswordByUsername = async (username) => {
+  const userData = await User.findOne({username: username}).select('+password');
+  if (!userData) {
+    return false;
+  }
+  return userData;
+}
+
 const findById = async (id) => {
   const userData = await User.findOne({_id: id});
   if (!userData) {
@@ -44,4 +52,4 @@ const deleteUserById = async (userId) => {
   return userDelete;
 }
 
-module.exports = {all, create, findByUsername, findById, updateUserById, deleteUserById};
+module.exports = {all, create, findByUsername, findById, updateUserById, deleteUserById, findUserPasswordByUsername};

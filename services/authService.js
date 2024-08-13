@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const userTokenRepository = require("../repositories/userTokenRepository");
 
 const attempt = async (username, password) => {
-  const user = await userRepository.findByUsername(username);
+  const user = await userRepository.findUserPasswordByUsername(username);
   if (user) {
     const passwordChacked = await bcrypt.compareSync(password, user.password);
     if (passwordChacked) {
