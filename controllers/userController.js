@@ -7,9 +7,10 @@ const index = async (req, res) => {
 }
 
 const show = async (req, res) => {
-  const {username} = req.params;
-  const user = await userRepository.findByUsername(username);
-  res.status(200).json(jsonResponse(200, user ?? "User not found."));
+  const {user} = req.params;
+  const userData = await userRepository.findByUsernameOrId(user);
+  console.log(userData);
+  res.status(200).json(jsonResponse(200, userData ?? "User not found."));
 }
 
 const changeUsername = async (req, res) => {

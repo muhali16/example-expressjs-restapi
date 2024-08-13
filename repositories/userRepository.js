@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
 const Merchant = require('../models/merchantModel');
+const mongoose = require("mongoose");
 
 const all = () => {
   return User.find();
@@ -12,8 +13,21 @@ const create = async (data) => {
   return user;
 }
 
-const findByUsername = async (username) => {
-  const userData = await User.findOne({username: username});
+const findByUsernameOrId = async (user) => {
+  const userData = await User.findOne({
+    $or: [
+        {_id: mongoose.Types.ObjectId.isValid(user) ? user : null},
+        {username: user}
+    ]
+  });
+  if (!userData) {
+    return false;
+  }
+  return userData;
+}
+
+const findUserPasswordByUsername = async (username) => {
+  const userData = await User.findOne({username: username}).select('+password');
   if (!userData) {
     return false;
   }
@@ -44,4 +58,4 @@ const deleteUserById = async (userId) => {
   return userDelete;
 }
 
-module.exports = {all, create, findByUsername, findById, updateUserById, deleteUserById};
+module.exports = {all, create, findByUsernameOrId, findById, updateUserById, deleteUserById, findUserPasswordByUsername};
